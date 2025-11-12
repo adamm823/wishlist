@@ -5,11 +5,72 @@
 .header {
     position: sticky;
     top: 0;
-    background-color: #333;
-    color: white;
+    z-index: 1000;
+    background-color: #BA0C2F;
     padding: 10px;
 }
 
 body {
-    background-color: lightblue;
+    background-color: #A7B1B7;
+    width: 90%;
+    margin: 0;
+}
+
+/* Popup (hidden by default). When shown script sets display: flex */
+#popup {
+    display: none;
+    position: absolute;
+    z-index: 10000;
+    background-color: white;
+    border: 10px solid #BA0C2F;
+    border-radius: 15px;
+    padding: 20px;
+    color: #111;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60%;
+    max-width: 900px;
+    box-sizing: border-box;
+    flex-direction: column; /* used when display:flex */
+}
+
+#closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #BA0C2F;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#popupName {
+    color: black;
+}
+
+#popupList li {
+    margin: 6px 0;
+}
+
+.popup-body {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+#popupList {
+    flex: 0 0 35%;
+    list-style: disc inside;
+    padding: 0 10px 0 0;
+    margin: 0;
+    color: #111;
+}
+
+.links {
+    display: none;
 }
